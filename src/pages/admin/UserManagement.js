@@ -21,6 +21,7 @@ import {
 import { usersAPI } from '../../services/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -89,7 +90,7 @@ const UserManagement = () => {
           phone: '+1 (555) 123-4567',
           role: 'customer',
           status: 'active',
-          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+          avatar: propertyURLs.avatarCustomer,
           lastLogin: '2024-01-20T14:30:00Z',
           createdAt: '2024-01-15T10:30:00Z',
           orders: 12,
@@ -110,7 +111,7 @@ const UserManagement = () => {
           phone: '+1 (555) 987-6543',
           role: 'admin',
           status: 'active',
-          avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+          avatar: propertyURLs.avatarAdmin,
           lastLogin: '2024-01-21T09:15:00Z',
           createdAt: '2024-01-01T08:00:00Z',
           orders: 0,

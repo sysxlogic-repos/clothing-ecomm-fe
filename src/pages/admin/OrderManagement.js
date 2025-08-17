@@ -17,6 +17,7 @@ import {
 import { ordersAPI } from '../../services/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const OrderManagement = () => {
   const [orders, setOrders] = useState([]);

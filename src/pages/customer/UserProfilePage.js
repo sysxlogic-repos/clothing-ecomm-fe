@@ -48,43 +48,7 @@ const UserProfilePage = () => {
       setOrders(response.data);
     } catch (error) {
       console.error('Error fetching orders:', error);
-      // Mock orders data for development
-      const mockOrders = [
-        {
-          _id: '1',
-          orderNumber: 'ORD-2024-001',
-          status: 'delivered',
-          createdAt: '2024-01-15T10:30:00Z',
-          total: 159.99,
-          items: [
-            {
-              product: { name: "Women's Elegant Summer Dress", image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=100&h=100&fit=crop' },
-              quantity: 1,
-              price: 89.99
-            },
-            {
-              product: { name: "Casual Cotton T-Shirt", image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop' },
-              quantity: 2,
-              price: 29.99
-            }
-          ]
-        },
-        {
-          _id: '2',
-          orderNumber: 'ORD-2024-002',
-          status: 'shipped',
-          createdAt: '2024-01-20T14:15:00Z',
-          total: 79.99,
-          items: [
-            {
-              product: { name: "Premium Leather Wallet", image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=100&h=100&fit=crop' },
-              quantity: 1,
-              price: 79.99
-            }
-          ]
-        }
-      ];
-      setOrders(mockOrders);
+      toast.error('Failed to load orders. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -97,34 +61,7 @@ const UserProfilePage = () => {
       setAddresses(response.data);
     } catch (error) {
       console.error('Error fetching addresses:', error);
-      // Mock addresses data for development
-      const mockAddresses = [
-        {
-          _id: '1',
-          type: 'home',
-          firstName: 'Jane',
-          lastName: 'Doe',
-          address: '123 Main Street',
-          city: 'New York',
-          state: 'NY',
-          zipCode: '10001',
-          country: 'United States',
-          isDefault: true
-        },
-        {
-          _id: '2',
-          type: 'work',
-          firstName: 'Jane',
-          lastName: 'Doe',
-          address: '456 Business Ave',
-          city: 'New York',
-          state: 'NY',
-          zipCode: '10002',
-          country: 'United States',
-          isDefault: false
-        }
-      ];
-      setAddresses(mockAddresses);
+      toast.error('Failed to load addresses. Please try again.');
     } finally {
       setLoading(false);
     }

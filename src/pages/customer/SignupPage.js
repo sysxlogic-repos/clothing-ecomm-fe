@@ -109,10 +109,12 @@ const SignupPage = () => {
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
         email: formData.email.trim().toLowerCase(),
-        phone: formData.phone.replace(/[\s\-\(\)]/g, ''),
+        phoneNumber: formData.phone.replace(/\s|\-|\(|\)/g, ''),
         password: formData.password,
-        subscribeNewsletter: formData.subscribeNewsletter
       };
+      if (typeof formData.subscribeNewsletter !== 'undefined') {
+        signupData.subscribeNewsletter = formData.subscribeNewsletter;
+      }
 
       await signup(signupData);
       toast.success('Account created successfully! Please check your email to verify your account.');

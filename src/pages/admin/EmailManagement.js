@@ -96,78 +96,7 @@ const EmailManagement = () => {
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error('Error fetching campaigns:', error);
-      // Mock data for development
-      const mockCampaigns = [
-        {
-          _id: '1',
-          name: 'Summer Sale 2024',
-          subject: '🌞 Summer Sale - Up to 50% Off Everything!',
-          type: 'promotional',
-          status: 'sent',
-          recipients: 15420,
-          sent: 15420,
-          delivered: 15180,
-          opened: 4544,
-          clicked: 682,
-          bounced: 240,
-          unsubscribed: 12,
-          openRate: 29.9,
-          clickRate: 4.5,
-          bounceRate: 1.6,
-          scheduledAt: '2024-01-20T10:00:00Z',
-          sentAt: '2024-01-20T10:00:00Z',
-          createdAt: '2024-01-18T14:30:00Z',
-          template: 'promotional_template_1',
-          segmentName: 'Active Customers'
-        },
-        {
-          _id: '2',
-          name: 'Weekly Newsletter #45',
-          subject: 'This Week in Fashion: New Arrivals & Trends',
-          type: 'newsletter',
-          status: 'scheduled',
-          recipients: 8750,
-          sent: 0,
-          delivered: 0,
-          opened: 0,
-          clicked: 0,
-          bounced: 0,
-          unsubscribed: 0,
-          openRate: 0,
-          clickRate: 0,
-          bounceRate: 0,
-          scheduledAt: '2024-01-25T09:00:00Z',
-          sentAt: null,
-          createdAt: '2024-01-22T11:15:00Z',
-          template: 'newsletter_template_2',
-          segmentName: 'Newsletter Subscribers'
-        },
-        {
-          _id: '3',
-          name: 'Abandoned Cart Recovery',
-          subject: 'You left something behind... Complete your purchase!',
-          type: 'abandoned_cart',
-          status: 'sending',
-          recipients: 1250,
-          sent: 890,
-          delivered: 875,
-          opened: 245,
-          clicked: 67,
-          bounced: 15,
-          unsubscribed: 3,
-          openRate: 28.0,
-          clickRate: 7.7,
-          bounceRate: 1.7,
-          scheduledAt: '2024-01-23T16:00:00Z',
-          sentAt: '2024-01-23T16:00:00Z',
-          createdAt: '2024-01-23T15:45:00Z',
-          template: 'abandoned_cart_template',
-          segmentName: 'Abandoned Cart Users'
-        }
-      ];
-      setCampaigns(mockCampaigns);
-      setTotalPages(1);
-      toast.error('Failed to load campaigns. Showing sample data.');
+      toast.error('Failed to load campaigns.');
     } finally {
       setLoading(false);
     }
@@ -190,48 +119,7 @@ const EmailManagement = () => {
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error('Error fetching templates:', error);
-      // Mock data for development
-      const mockTemplates = [
-        {
-          _id: '1',
-          name: 'Promotional Template - Modern',
-          description: 'Clean and modern promotional email template with hero image',
-          type: 'promotional',
-          status: 'active',
-          usageCount: 45,
-          lastUsed: '2024-01-20T10:00:00Z',
-          createdAt: '2024-01-01T08:00:00Z',
-          thumbnail: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=200&fit=crop',
-          tags: ['sale', 'modern', 'responsive']
-        },
-        {
-          _id: '2',
-          name: 'Newsletter Template - Weekly',
-          description: 'Weekly newsletter template with sections for articles and products',
-          type: 'newsletter',
-          status: 'active',
-          usageCount: 23,
-          lastUsed: '2024-01-22T11:15:00Z',
-          createdAt: '2024-01-05T10:30:00Z',
-          thumbnail: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=200&fit=crop',
-          tags: ['newsletter', 'weekly', 'content']
-        },
-        {
-          _id: '3',
-          name: 'Welcome Series - Onboarding',
-          description: 'Welcome email template for new customer onboarding',
-          type: 'welcome',
-          status: 'active',
-          usageCount: 156,
-          lastUsed: '2024-01-23T14:20:00Z',
-          createdAt: '2023-12-15T09:00:00Z',
-          thumbnail: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop',
-          tags: ['welcome', 'onboarding', 'series']
-        }
-      ];
-      setTemplates(mockTemplates);
-      setTotalPages(1);
-      toast.error('Failed to load templates. Showing sample data.');
+      toast.error('Failed to load templates.');
     } finally {
       setLoading(false);
     }

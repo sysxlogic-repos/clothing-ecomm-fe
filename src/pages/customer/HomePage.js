@@ -6,6 +6,7 @@ import { productsAPI } from '../../services/api';
 import ProductCard from '../../components/common/ProductCard';
 import LoadingSpinner, { CardSkeleton } from '../../components/common/LoadingSpinner';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -339,3 +340,11 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+<div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+  <img
+    src={propertyURLs.mainBanner}
+    alt="Fashion Model"
+    className="w-full h-full object-cover opacity-80"
+  />
+</div>

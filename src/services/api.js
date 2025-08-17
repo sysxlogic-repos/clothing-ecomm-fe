@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base API configuration
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api/api';
 
 // Create axios instance
 const api = axios.create({
@@ -189,15 +189,8 @@ api.interceptors.response.use(
 
     console.log('🔌 Service Connection Info:', serviceMessage);
     
-    // Dispatch service info event for the modal
-    if (typeof window !== 'undefined' && window.showServiceInfo) {
-      window.showServiceInfo(serviceMessage);
-    }
-    
-    // Show user-friendly message
-    if (typeof window !== 'undefined' && window.toast) {
-      window.toast.error(`Unable to connect to ${serviceInfo.name}. Click to see connection steps.`);
-    }
+    // Optionally, you can log the error or handle it silently here instead of showing modal or toast.
+    // Removed modal and toast triggers for service info.
 
     // Handle authentication specifically
     if (error.response?.status === 401) {
@@ -207,22 +200,16 @@ api.interceptors.response.use(
       }
     }
 
-    // Return service info instead of rejecting
-    return Promise.resolve({
-      data: {
-        serviceInfo: serviceMessage,
-        mockData: true,
-        message: `Service information for ${serviceInfo.name}`
-      }
-    });
+    // Return a generic error response instead of service info modal and mock data
+    return Promise.reject(error);
   }
 );
 
 // Auth API
 export const authAPI = {
-  sendOTP: (data) => api.post('/auth/send-otp', data),
+  sendOTP: (data) => api.post('/users/otp', data),
   login: (data) => api.post('/auth/login', data),
-  signup: (data) => api.post('/auth/signup', data),
+  signup: (data) => api.post('/users/register', data),
   verifyToken: (token) => api.get('/auth/verify', {
     headers: { Authorization: `Bearer ${token}` }
   }),

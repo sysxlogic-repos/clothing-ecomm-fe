@@ -17,6 +17,7 @@ import {
 import { productsAPI } from '../../services/api';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const ProductManagement = () => {
   const [products, setProducts] = useState([]);
@@ -85,7 +86,7 @@ const ProductManagement = () => {
           sku: 'WD-001',
           stock: 25,
           status: 'active',
-          images: ['https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=100&h=100&fit=crop'],
+          images: [propertyURLs.productPlaceholder],
           rating: 4.5,
           reviewCount: 128,
           sales: 145,
@@ -104,7 +105,7 @@ const ProductManagement = () => {
           sku: 'CT-002',
           stock: 0,
           status: 'out_of_stock',
-          images: ['https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop'],
+          images: [propertyURLs.productPlaceholder],
           rating: 4.2,
           reviewCount: 89,
           sales: 234,
@@ -123,7 +124,7 @@ const ProductManagement = () => {
           sku: 'LW-003',
           stock: 15,
           status: 'active',
-          images: ['https://images.unsplash.com/photo-1627123424574-724758594e93?w=100&h=100&fit=crop'],
+          images: [propertyURLs.productPlaceholder],
           rating: 4.8,
           reviewCount: 67,
           sales: 89,

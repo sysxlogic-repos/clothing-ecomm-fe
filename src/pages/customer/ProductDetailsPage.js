@@ -8,6 +8,7 @@ import ProductCard from '../../components/common/ProductCard';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { productsAPI } from '../../services/api';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();

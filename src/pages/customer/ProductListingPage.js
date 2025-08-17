@@ -6,6 +6,7 @@ import ProductCard from '../../components/common/ProductCard';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import { productsAPI } from '../../services/api';
 import toast from 'react-hot-toast';
+import propertyURLs from '../../config/property';
 
 const ProductListingPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -68,7 +69,7 @@ const ProductListingPage = () => {
         name: `Women's Fashion Item ${i + 1}`,
         price: Math.floor(Math.random() * 200) + 20,
         originalPrice: Math.floor(Math.random() * 300) + 50,
-        image: `https://images.unsplash.com/photo-${1500000000000 + i}?w=400&h=500&fit=crop`,
+        image: propertyURLs.productPlaceholder,
         rating: (Math.random() * 2 + 3).toFixed(1),
         reviewCount: Math.floor(Math.random() * 100) + 10,
         category: categories[Math.floor(Math.random() * categories.length)],

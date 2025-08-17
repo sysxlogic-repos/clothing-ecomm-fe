@@ -92,75 +92,7 @@ const InventoryPage = () => {
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error('Error fetching inventory:', error);
-      // Mock data for development
-      const mockInventory = [
-        {
-          _id: '1',
-          product: {
-            _id: 'p1',
-            name: "Women's Elegant Summer Dress",
-            sku: 'WD-001',
-            category: 'Clothing',
-            price: 89.99,
-            image: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=100&h=100&fit=crop'
-          },
-          currentStock: 25,
-          reservedStock: 3,
-          availableStock: 22,
-          reorderLevel: 10,
-          maxStock: 100,
-          lastRestocked: '2024-01-15T10:30:00Z',
-          movements: [
-            { type: 'in', quantity: 50, reason: 'Received shipment', date: '2024-01-15T10:30:00Z' },
-            { type: 'out', quantity: 25, reason: 'Sold items', date: '2024-01-18T14:20:00Z' }
-          ]
-        },
-        {
-          _id: '2',
-          product: {
-            _id: 'p2',
-            name: "Casual Cotton T-Shirt",
-            sku: 'CT-002',
-            category: 'Clothing',
-            price: 29.99,
-            image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop'
-          },
-          currentStock: 5,
-          reservedStock: 2,
-          availableStock: 3,
-          reorderLevel: 15,
-          maxStock: 200,
-          lastRestocked: '2024-01-10T09:15:00Z',
-          movements: [
-            { type: 'in', quantity: 100, reason: 'Received shipment', date: '2024-01-10T09:15:00Z' },
-            { type: 'out', quantity: 95, reason: 'Sold items', date: '2024-01-20T16:45:00Z' }
-          ]
-        },
-        {
-          _id: '3',
-          product: {
-            _id: 'p3',
-            name: "Premium Leather Wallet",
-            sku: 'LW-003',
-            category: 'Accessories',
-            price: 79.99,
-            image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=100&h=100&fit=crop'
-          },
-          currentStock: 0,
-          reservedStock: 0,
-          availableStock: 0,
-          reorderLevel: 5,
-          maxStock: 50,
-          lastRestocked: '2024-01-05T16:45:00Z',
-          movements: [
-            { type: 'in', quantity: 30, reason: 'Received shipment', date: '2024-01-05T16:45:00Z' },
-            { type: 'out', quantity: 30, reason: 'Sold items', date: '2024-01-19T13:20:00Z' }
-          ]
-        }
-      ];
-      setInventory(mockInventory);
-      setTotalPages(1);
-      toast.error('Failed to load inventory. Showing sample data.');
+      toast.error('Failed to load inventory.');
     } finally {
       setLoading(false);
     }
@@ -172,13 +104,7 @@ const InventoryPage = () => {
       setStats(response.data);
     } catch (error) {
       console.error('Error fetching stats:', error);
-      // Mock stats
-      setStats({
-        totalProducts: 156,
-        lowStockItems: 12,
-        outOfStockItems: 3,
-        totalValue: 45678.90
-      });
+      toast.error('Failed to load inventory stats.');
     }
   };
 
